@@ -1,0 +1,27 @@
+[project]
+name = "news-scraper"
+version = "0.1.0"
+authors = [
+    { name = "Artem Khodakov", email = "artem.khodakov.workbox@gmail.com" }
+]
+dependencies = [
+    "pydantic>=2.10.6",
+    "pydantic-settings>=2.7.1",
+    "typer>=0.15.1",
+    "langchain>=0.3.17",
+    "chromadb>=0.6.3",
+    "trafilatura>=2.0.0",
+    "langchain-openai>=0.3.4",
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pre-commit>=4.1.0",
+    "ruff>=0.9.6",
+]
+
+[tool.rye.scripts]
+"fix" = "ruff check --fix ."

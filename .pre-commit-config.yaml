@@ -1,0 +1,33 @@
+default_language_version:
+  python: python3.12
+default_stages:
+  - pre-commit
+repos:
+  - hooks:
+      - args:
+          - --maxkb=256
+        id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+    repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+
+  - hooks:
+      - always_run: true
+        entry: rye run fix
+        id: rye-ruff
+        language: system
+        name: ruff
+        pass_filenames: false
+
+      - always_run: true
+        entry: rye sync --all-features
+        id: rye-sync-all-features
+        language: system
+        name: rye sync --all-features
+        pass_filenames: false
+    repo: local

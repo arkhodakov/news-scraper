@@ -1,0 +1,9 @@
+[storage]
+path = "./data"
+
+[search]
+articles_distance_threshold = 0.6
+
+[llm]
+base_url = "http://192.168.100.56:1234/v1"
+model = "llama-3.2-3b-instruct"
